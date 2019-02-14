@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<!-- meta section: -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width">
+		<!--	Javascripts:	must keep order of the followings	-->
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="styles/SkyLine.css"/>
+		<!--		Frameworks:	-->
+		<script src="scripts/Object.js"></script>
+		<script src="scripts/Menu.js"></script>		
+		<script src="scripts/Project.js"></script>
+		<script src="scripts/Unit.js"></script>
+		<script src="scripts/Backgrounder.js"></script>
+		<script src="scripts/Sounder.js"></script>
+		<script src="scripts/Bento.js"></script>
+		<script src="scripts/Manager.js"></script>
+		<script src="scripts/Tab.js"></script>
+		<script src="scripts/Policy.js"></script>
+		<script src="scripts/MenuButton.js"></script>		
+		<!--		Each Part of it:	-->
+		<script src="../World/scripts/World.js"></script>
+		<script src="../Blog/scripts/Blog.js"></script>
+		<script src="../SnowyField/scripts/SnowyField.js"></script>
+		<link rel="stylesheet" type="text/css" href="../SnowyField/styles/SnowyField.css"/>
+		<!--		Hub site:	Should be delared to the last.	-->
+		<script src="scripts/SkyLine.js"></script>
+    </head>
+    <body onresize="manager.resize();">
+		<div id="menu_button">
+			<div id="menu_line_frame">
+				<div id="menu_line_one" class="menu_line"></div>
+				<div id="menu_line_two" class="menu_line"></div>
+				<div id="menu_line_three" class="menu_line"></div>
+			</div>
+		</div>
+		<div id="dynbg_area"></div>
+        <!--	Bento Menus	:-->
+		<div id="bento_frame">
+			<div id="bento">
+				<div id="bento_menu"></div>
+				<div id="bento_title_frame">
+					<div id="bento_title" class="title_on_left">SkyLine</div>
+				</div>
+				<div id="bento_comment"></div>
+				<div id="bento_bar"></div>
+				<div id="bento_focused_menu_backplate"></div>
+			</div>
+		</div>
+		<div id="content_frame">
+			<div id="loadingscore">35%</div>
+			<div id="loadingbar"></div>			
+			<iframe id="content" onload="manager.getTab().showLoading(false);" src="blank.html"></iframe>
+		</div>
+    </body>
+</html> 

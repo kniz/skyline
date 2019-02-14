@@ -1,0 +1,230 @@
+<!--
+	JS =
+		Array =	size 초과시 자동으로 확장
+			추가 =
+				push() 		뒤에 추가	
+				unshift()	앞에 추가
+			삭제 =
+				pop()		뒤에꺼 삭제
+				shift()		앞에꺼 삭제
+-->
+<!DOCTYPE html>
+<html>
+    <head>		
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/pictogram_icons2/dc_pictogram_icons2.css" />
+
+        <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+        <script>
+
+$(document).ready(function(){
+	setTimeout(scrolling(), 100);
+	$("b.button").click(function(){
+		var url_base = "http://kniz.net/";
+		var url = url_base + $(this).attr("url");		
+		
+		parent.window.location = url;
+	});
+
+	$("textarea").each(function(n, element){
+		this.style.height = "1px";
+  		this.style.height = this.scrollHeight+"px";
+	});
+});
+
+var y = 0;
+function scrolling() {
+	y += 10;
+	window.scrollTo(0, y);
+}
+        </script>
+		<style>
+div {
+	font-size: 40px;
+}
+div#center {
+	color:white;
+	position:fixed;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	width: 95%;
+	margin-right:15px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+	height: 100%;
+	margin: 30px;
+    padding-top:1em;
+}
+div#bg {
+	position:fixed;	
+	width:100%;
+	top:0%;
+	left:0%;	
+	height:100%;
+	background-color:#111;
+	opacity: 0.8;
+}
+div.bar {
+	border-radius: 5px;
+	background-color: #c0c0c0;
+	height:10px;
+	width:100%;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+b {
+	margin-top: 0px;
+	font-size: 40px;
+	font-family: 'Oswald', sans-serif;
+}
+b:hover {
+	color: #25c !important;
+}
+h1 {
+	margin-bottom: 5px;
+    margin-top: 0px;
+}
+h6 {
+	font-size: 8;
+}
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(220,220,220,1.0); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(130,130,130,0.4); 
+}
+textarea {
+	height: 0%;
+	font-size:22px;
+	width: 100%;
+	background-color: transparent;
+	border-color: transparent;
+	color:white;
+	font-family: 'Lato', sans-serif;
+	outline: none;
+	overflow:hidden;
+	resize: none;
+}
+		</style>
+    </head>
+    <body>   
+    	<div id="bg"></div>
+    	<div id="center">
+	    	<h1>History</h1>
+	    	<div class="bar"></div>
+			<b class="button" style="color: palegreen" url="SkyLine">v0.51 <i>"Horizon-kai"</i></b><br/>
+	    	<textarea disabled>
+March 26, 2017
+	+ 	using low quality image on mobile layout let your browser get faster.
+	+ 	some iframe won't bother you when you aren't on DesktopLayout.
+	- 	useless constructor parameter "is_open_fully" was removed.
+	    	</textarea>	    	
+			<div class="bar"></div>
+			<b class="button" style="color: palegreen" url="SkyLine">v0.5 <i>"Horizon"</i></b><br/>
+	    	<textarea disabled>
+March 11, 2017
+
+Responsive.
+
+	+ 	apply "Responsive Layout". now, you can open up this site on your phone.
+	+ 	menu button added.
+	+ 	history page has better readability.
+	+ 	license page added.
+	+	Sound enhanced.
+	+ 	Music project has been joined us.
+	+	Blog was fully accepted. Menu was integreted to this site.
+	+ 	Let you know easily what Back button would do. It will animate when you hover it.
+	+	Loading information will shows up when iframe loads document.
+	+ 	you can access sub pages easily with GET parameters. Why don't you try "kniz.net?start_page=World" ?
+	+ 	if it's difficult to use above one, try shortcut pages getting ready for you. "kniz.net/World" . this redirects pages and output is just like above.
+	- 	performance was slow down because of memory leak.
+	    	</textarea>	    	
+			<div class="bar"></div>
+	    	<b class="button" style="color: seagreen" url="SkyLine">v0.4 <i>"Bean on the plate"</i></b><br/>
+	    	<textarea disabled>
+February 28, 2017
+
+The entire codes were newly created for Better Performance.
+
+	+ 	Use GSAP library for better animation performance.
+	+ 	code refactorying. unnecessory callback function and overridings has been deleted.
+	+	browser compatiblity improved. Chrome, Firefox, Edge, SBrowser. Even internet explorer can show.
+	+ 	SkyLine's title & comment color combination was owful. Now it's improved.
+	- 	BGM player was removed. (because, it's ennoying)
+	    	</textarea>	    	
+	    	<div class="bar"></div>
+	    	<b class="button" style="color: #92c" url="SkyLine">v0.31 <i>"Stratu"</i></b><br/>
+	    	<textarea disabled>
+August 14, 2015
+
+
+If I can tell the previous version as "incomplete, but initiative", This version could be called "almost reflected author's intention" with a little exagerration.
+Like every some creative first try has a couple of defect, This also is no exception.
+This version's main change is "reducing bug, enforcing strong points"
+Next followings are change list.
+	+ 	Change Bento UI to display its contents more 
+		effeciently. (reduce size, more information)
+	+ 	Far, Better dynamic in UI than before.
+	+ 	New Wiki has been joined us!
+	+ 	All sources implemented from a scratch. Full 
+		rebuilded. In result, more resuable, eliminating 
+		code rots and well constructed framework, locality 
+		incresed.
+	+ 	BGMs are offered as a one of projects, "Songs". You 
+		can choose what you want.
+	+ 	Guiding panel shows up in order to inform to user 
+		which one is menu.
+	+ 	Full featured Content-Layoutㅡa little popup window 
+		can contains some url pages. Along with your width 
+		of web browser, change layout smoothly.
+	+ 	My 2 songs added as a one of BGMs.
+	- 	More than 1 Cookie doesn't updated. Only 
+		"isPlayingBGM" value was possible to be written on 
+		cookie.	
+	- 	And So many bugs fixed that I didn't know at now.
+	    	</textarea>	    	
+	    	<div class="bar"></div>
+	    	<b class="button" style="color: coral" url="SkyLine.v0.1">v0.1 <i>"Ground-0"</i></b><br/>
+	    	<textarea disabled >
+April 10, 2013
+
+
+This is a first step of project SkyLine.
+Some features I concerned on ideation weren't implemented proplely.
+But even that, overall concept and what I want to create things was fit in this.
+
+If I need to mention about the most valuable concept of this one, that would be the "Continum".
+I've created so many little projects. So some support web-pages were getting bigger, more and more along with that.
+They have no common design concepts or color tone. and each one have unique layout. 
+So, that makes me a embarassment. I'm doing this some kind of a hobby. not my job, you know. But these projects doens't focused in one single point. They are huge seprated to here and there projects which I have to worry about all of them. This is not pretty. not pretty.
+I want to make them a single piece in conceptually. Because my hobby should be a single one. Such a tiny thing that I can handle it.
+I started to design one website which contains all of them. And for user, in order not to notice projects are seperated.
+	    	</textarea>
+    	</div>
+    	
+
+
+    	</textarea>
+    </body>
+</html> 

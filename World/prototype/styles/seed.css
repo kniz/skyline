@@ -1,0 +1,54 @@
+body {
+    position: relative;
+    display: inline-block;
+}
+div.statement:hover {
+    outline:none;
+    user-select: none;
+}
+div.statementbase {
+}
+div#inteligence {
+    background-color: #29d;
+    border-radius: 25px;
+    position:absolute;
+    width:0px;
+    height: 0px;
+    z-index: -1;
+}
+div.statement {
+    display: flex;
+    border-radius: 5px;
+    flex: 1;
+    font-size :22px;
+}
+p.identifier {
+    margin: 5px;
+    display:inline-block;
+}
+p.identifier:hover {
+    background-color: #fd3;
+    border-radius: 20px;
+}
+div.calling1 {
+    /*background-color:#def;*/
+}
+div.calling2 {
+    background-color:#f4f4ff;
+}
+div.calling3 {
+    background-color:#e3fff4;
+}
+div.calling4 {
+    background-color:#f0f9c9;
+}
+
+div.calling2m:hover {
+    background-color:#f4f4ff;
+}
+div.calling3m:hover {
+    background-color:#e3fff4;
+}
+div.calling4m:hover {
+    background-color:#f0f9c9;
+}

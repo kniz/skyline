@@ -1,0 +1,88 @@
+<!--
+	JS =
+		Array =	size 초과시 자동으로 확장
+			추가 =
+				push() 		뒤에 추가	
+				unshift()	앞에 추가
+			삭제 =
+				pop()		뒤에꺼 삭제
+				shift()		앞에꺼 삭제
+-->
+<!DOCTYPE html>
+<html>
+    <head>		
+		<!-- meta section: -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/pictogram_icons2/dc_pictogram_icons2.css" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+        <script>
+
+$(document).ready(function(){
+	jQuery.fn.center = function () {
+	    this.css("position","absolute");
+	    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+	    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+	    return this;
+	}
+	$("a.submit-button").hover(function(){
+		$(this).animate({
+			padding: "20px"
+		}, 400);
+		var manager = parent.manager;
+		manager.getSounder().playMatchedName("click");
+	}, function(){
+		$(this).animate({
+			"padding": "10px"
+		}, 400);
+	}).click(function(){
+		var manager = parent.manager;
+		manager.getSounder().playMatchedName("click2");
+	});
+});
+function resize() {
+	$('div#center').center();
+}
+        </script>
+		<style>
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 40px;
+	background-color: #23d9F0;
+}
+div#center {
+}
+a.submit-button {	
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border: 5px solid #2B2B2B;
+    color: black;
+}
+a.submit-button:active {	
+	background-color: #D20000;
+	border: 5px solid white;
+	color: white;
+}
+a span {
+	color:white;
+}
+div#center {
+	text-align: center;
+}
+		</style>
+    </head>
+    <body onload="resize();"resize="resize();">
+    	
+    	<div id="center" class="v-box">
+	    	Hello to World project!<br/><br/>
+		    	<a class="submit-button" onclick="parent.MANAGER.getMenuByName('download').onClick();">
+		    		<span class="dc_pict_icon_24 min_communication_58"></span>
+		    		Download now!
+		    	</a>
+	    </div>
+    </body>
+</html> 
